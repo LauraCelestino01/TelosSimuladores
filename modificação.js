@@ -1,113 +1,115 @@
-const Lista = [
-{
-"orgao": "Polícia Civil",
-"data": "01/01/2024",
-"valor": 5500.00,
-"status": "sucesso"
-},
-{
-"orgao": "PolíciaRodoviáriaFederal",
-"data": "02/01/2024",
-"valor":6000.00,
-"status": "falha",
-"motivo": "Problemas técnicos"
- },
-{
-"orgao": "PolíciaMilitar",
-"data":"03/01/2024",
-"valor": 4500.00,
-"status":"sucesso"
- },
-{
-"orgao": "CorpoDeBombeiros",
-"data": "04/01/2024",
-"valor": 7000.00,
-"status":"sucesso"
-},
-{
-"orgao": "Guarda Municipal",
-"data": "05/01/2024",
-"valor": 3500.00,
-"status":"falha",
-"motivo":"Documentação incompleta"
- },
-{
-"orgao": "Receita Federal",
-"data": "06/01/2024",
-"valor": 8000.00,
-"status":"sucesso"
-},
-{
-"orgao": "Ministério Público",
-"data": "07/01/2024",
-"valor": 9000.00,
-"status": "falha",
-"motivo":"Erro no sistema"
- },
-{
-"orgao": "Defesa Civil",
-"data": "08/01/2024",
-"valor": 4000.00,
-"status":"sucesso" 
-},
-{
-"orgao" : "Detran",
-"data":"09/01/2024",
-"valor": 5000.00,
-"status":"sucesso"
-},
-{
-"orgao":"Polícia Federal",
-"data": "10/01/2024",
-"valor": 6500.00,
-"status":"falha",
-"motivo": "Falta de recursos" 
-},
-{
-"orgao": "Ibama",
-"data": "11/01/2024",
-"valor":5500.00,
-"status": "sucesso"
-},
-{
-"orgao":"Anvisa",
-"data": "12/01/2024",
-"valor":6000.00,
-"status": "sucesso"
-},
-{
-"orgao":"Inmetro",
-"data" : "13/01/2024",
-"valor":3000.00,
-"status": "falha",
-"motivo": "Dadosincorretos"
- },
-{
-"orgao": "Cetesb",
-"data":"14/01/2024",
-"valor": 7000.00,
-"status":"sucesso"
-},
-{
-"orgao": "Susep",
-"data":"15/01/2024",
-"valor": 8000.00,
-"status":"falha",
-"motivo": "Problemas técnicos"
- },
- {
-"orgao": "Polícia Civil",
-"data": "16/01/2024",
-"valor": 5200.00,
-"status": "sucesso"
-},
-{"orgao": "Polícia Rodoviária Federal",
-"data": "17/01/2024",
-"valor": 6100.00,
-"status": "falha",
- "motivo": "Erro humano"
-},
- {
+const Lista = 
+[
+  {
+    "orgao": "Polícia Civil",
+    "data": "01/01/2024",
+    "valor": 5500.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Polícia Rodoviária Federal",
+    "data": "02/01/2024",
+    "valor": 6000.00,
+    "status": "falha",
+    "motivo": "Problemas técnicos"
+  },
+  {
+    "orgao": "Polícia Militar",
+    "data": "03/01/2024",
+    "valor": 4500.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Corpo de Bombeiros",
+    "data": "04/01/2024",
+    "valor": 7000.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Guarda Municipal",
+    "data": "05/01/2024",
+    "valor": 3500.00,
+    "status": "falha",
+    "motivo": "Documentação incompleta"
+  },
+  {
+    "orgao": "Receita Federal",
+    "data": "06/01/2024",
+    "valor": 8000.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Ministério Público",
+    "data": "07/01/2024",
+    "valor": 9000.00,
+    "status": "falha",
+    "motivo": "Erro no sistema"
+  },
+  {
+    "orgao": "Defesa Civil",
+    "data": "08/01/2024",
+    "valor": 4000.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Detran",
+    "data": "09/01/2024",
+    "valor": 5000.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Polícia Federal",
+    "data": "10/01/2024",
+    "valor": 6500.00,
+    "status": "falha",
+    "motivo": "Falta de recursos"
+  },
+  {
+    "orgao": "Ibama",
+    "data": "11/01/2024",
+    "valor": 5500.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Anvisa",
+    "data": "12/01/2024",
+    "valor": 6000.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Inmetro",
+    "data": "13/01/2024",
+    "valor": 3000.00,
+    "status": "falha",
+    "motivo": "Dados incorretos"
+  },
+  {
+    "orgao": "Cetesb",
+    "data": "14/01/2024",
+    "valor": 7000.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Susep",
+    "data": "15/01/2024",
+    "valor": 8000.00,
+    "status": "falha",
+    "motivo": "Problemas técnicos"
+  },
+  {
+    "orgao": "Polícia Civil",
+    "data": "16/01/2024",
+    "valor": 5200.00,
+    "status": "sucesso"
+  },
+  {
+    "orgao": "Polícia Rodoviária Federal",
+    "data": "17/01/2024",
+    "valor": 6100.00,
+    "status": "falha",
+    "motivo": "Erro humano"
+  },
+  {
     "orgao": "Polícia Militar",
     "data": "18/01/2024",
     "valor": 4600.00,
@@ -293,6 +295,7 @@ const Lista = [
     "status": "sucesso"
   }
 ];
+
 let Numeroexecucao = 1;
 
 for(let elemento of Lista){
@@ -428,3 +431,22 @@ const MenorValor = Lista.reduce((menor, item) => {
 //*console.log(MenorValor)
 
 // Dias com mais repasses
+
+const PorDia = Lista.reduce((acumulo, item) =>{
+  const Dia= item.data;
+  acumulo[Dia]= acumulo[Dia] ||+1;
+  return acumulo;
+}, {});
+
+//*console.log(`Quantidade de repasses no dia:`);
+//*console.log(PorDia);
+
+// Orgão com mais repasses
+const PorOrgaos = Lista.reduce((acumulo, item) =>{
+  const orgao= item.orgao;
+  acumulo[orgao]= acumulo[orgao] ||+1;
+  return acumulo;
+}, {});
+
+console.log(`Quantidade de repasses no dia:`);
+console.log(PorOrgaos);
