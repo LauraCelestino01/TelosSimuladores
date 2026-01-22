@@ -296,7 +296,7 @@ const Lista =
   }
 ];
 
-let Numeroexecucao = 1;
+let Numeroexecucao = 0;
 
 for(let elemento of Lista){
     console.log(`Repasse de número ${Numeroexecucao}`);
@@ -305,66 +305,60 @@ for(let elemento of Lista){
 }
 // #1
 
-let Numerofinal = Numeroexecucao - 1;
-console.log(`O total de repasses é ${Numerofinal}`);
+console.log(`O total de repasses é ${Numeroexecucao}`);
 
 // #2
 // Total de repasses bem sussedidos
 const Sucessos=Lista.filter(item => item.status === `sucesso`);
-let SucessosTotal = 1
+let SucessosTotal = 0;
 for (const item of Sucessos) {
     console.log(`Repasse com sucesso de número ${SucessosTotal}:`);
     console.log(item); 
     SucessosTotal++; 
 }
-let SucessoFinal = SucessosTotal -1;
-console.log(`O total de repasses com sucesso é ${SucessoFinal}`)
+console.log(`O total de repasses com sucesso é ${SucessosTotal}`);
 
 // Por Orgão
-const OrgaoSucesso = Lista
-  .filter(item => item.status === "sucesso").reduce((acumulo, item) => {
+const OrgaoSucesso = Lista.filter(item => item.status === "sucesso").reduce((acumulo, item) => {
     acumulo[item.orgao] = (acumulo[item.orgao] || 0) + 1;
     return acumulo;
   }, {});
 
 const VROsucesso = Object.entries(OrgaoSucesso).map(([orgao, total]) => ({ orgao, total }));
 
-console.log(`Total de repasses de sucesso por orgãos:`)
+console.log(`Total de repasses de sucesso por orgãos:`);
 console.log(VROsucesso);
 
 // Valor total de repasses bem sussedidos
 let ValorTotal=0;
 for (const repasse of Sucessos) {
-  Valortotal=+ repasse.valor;
-
+  ValorTotal=+ repasse.valor;
 };
 for (const item of Sucessos) {
-  console.log(item.valor)
+  console.log(item.valor);
 };
-console.log(`O valor total dos repasses de sucesso é ${Valortotal}`)
+console.log(`O valor total dos repasses de sucesso é ${ValorTotal}`);
 
 // Por Orgão
-const ValoresOrgaoS = Lista
-.filter(item => item.status === "sucesso").reduce((acumulo, item) =>{
-  acumulo[item.orgao]= (acumulo[item.orgao] || 0)+ item.valor;
+const ValoresOrgaoS = Lista.filter(item => item.status === "sucesso").reduce((acumulo, item) =>{
+  acumulo[item.orgao]||0 + item.valor;
   return acumulo
 }, {}) 
 const VOsucesso = Object.entries(ValoresOrgaoS).map(([orgao, total]) => ({orgao, total}));
 
 console.log(`O valor total que cada orgão recebeu foi`)
-console.log(ValoresOrgao)
+console.log(VOsucesso)
 
 
 // Total de repasses com falhas
 const Falhas=Lista.filter(item => item.status === `falha`);
-let FalhasTotal = 1
+let FalhasTotal = 0;
 for (const item of Falhas) {
     console.log(`Repasse com falha de número ${FalhasTotal}:`);
     console.log(item); 
     FalhasTotal++; 
 }
-let FalhaFinal = FalhasTotal -1;
-console.log(`O total de repasses com falhas é ${FalhaFinal}`)
+console.log(`O total de repasses com falhas é ${FalhasTotal}`);
 
 // Por Orgão
 const OrgaoFalha = Lista
@@ -379,11 +373,11 @@ console.log(`Total de repasses de falhas por orgãos:`)
 console.log(ROfalha);
 
 //Por Motivo
-const Motivos=Lista.filter(item => item.status === "falha").map(item => item.motivo).reduce((acumulo, item) => {
-    acumulo[item.orgao] = (acumulo[item.orgao] || 0) + 1;
+const Motivos=Lista.filter(item => item.status === "falha").reduce((acumulo, item) => {
+    acumulo[item.motivo] = (acumulo[item.motivo] || 0) + 1;
     return acumulo;
   }, {});
-const RMfalha = Object.entries(OrgaoFalha).map(([motivo, total]) => ({ motivo, total }));
+const RMfalha = Object.entries(Motivos).map(([motivo, total]) => ({ motivo, total }));
 
 console.log(`Total de repasses de falhas por motivos`)
 console.log(RMfalha)
@@ -407,8 +401,8 @@ const OValoresFalhas = Lista
 }, {}) 
 const RVOfalhas = Object.entries(OValoresFalhas).map(([orgao, total]) => ({orgao, total}));
 
-console.log(`O valor total que cada orgão recebeu foi`)
-console.log(OValoresFalhas)
+console.log(`O valor total que cada orgão recebeu foi`);
+console.log(OValoresFalhas);
 
 //Por Motivo
 
@@ -421,20 +415,22 @@ const MaiorValor = Lista.reduce((maior, item) => {
   return item.valor > maior.valor ? item : maior;
 });
 
-//*console.log(MaiorValor)
+console.log(`Repasse de maior valor:`);
+console.log(MaiorValor);
 
 // Detalhes do repasse com menor valor
 const MenorValor = Lista.reduce((menor, item) => {
   return item.valor < menor.valor ? item : menor;
 });
 
-console.log(MenorValor)
+console.log(`Repasse de menor valor:`);
+console.log(MenorValor);
 
 // Dias com mais repasses
 
 const PorDia = Lista.reduce((acumulo, item) =>{
   const Dia= item.data;
-  acumulo[Dia]= acumulo[Dia] ||+1;
+  (acumulo[Dia]= acumulo[Dia]||0)+1;
   return acumulo;
 }, {});
 
